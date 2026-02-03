@@ -1,0 +1,35 @@
+//! Auto-generated module declarations
+
+pub mod auth_helper;
+pub mod bitbucket;
+pub mod composer_mirror;
+pub mod config_validator;
+pub mod error_handler;
+pub mod filesystem;
+pub mod forgejo;
+pub mod forgejo_repository_data;
+pub mod forgejo_url;
+pub mod git;
+pub mod git_hub;
+pub mod git_lab;
+pub mod hg;
+pub mod http;
+pub mod http_downloader;
+pub mod ini_helper;
+pub mod loop_;
+pub mod metadata_minifier;
+pub mod no_proxy_pattern;
+pub mod package_info;
+pub mod package_sorter;
+pub mod perforce;
+pub mod platform;
+pub mod process_executor;
+pub mod remote_filesystem;
+pub mod silencer;
+pub mod stream_context_factory;
+pub mod svn;
+pub mod sync_helper;
+pub mod tar;
+pub mod tls_helper;
+pub mod url;
+pub mod zip;

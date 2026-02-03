@@ -1,0 +1,35 @@
+//! Auto-generated module declarations
+
+pub mod advisory;
+pub mod all_functional_test;
+pub mod application_test;
+pub mod autoload;
+pub mod cache_test;
+pub mod command;
+pub mod completion_functional_test;
+pub mod composer_test;
+pub mod config;
+pub mod config_test;
+pub mod console;
+pub mod default_config_test;
+pub mod dependency_resolver;
+pub mod documentation_test;
+pub mod downloader;
+pub mod event_dispatcher;
+pub mod factory_test;
+pub mod filter;
+pub mod fixtures;
+pub mod i_o;
+pub mod installed_versions_test;
+pub mod installer;
+pub mod installer_test;
+pub mod json;
+pub mod mock;
+pub mod package;
+pub mod platform;
+pub mod plugin;
+pub mod question;
+pub mod repository;
+pub mod script;
+pub mod test_case;
+pub mod util;

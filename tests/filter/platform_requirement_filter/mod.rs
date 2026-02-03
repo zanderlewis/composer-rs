@@ -1,0 +1,6 @@
+//! Auto-generated module declarations
+
+pub mod ignore_all_platform_requirement_filter_test;
+pub mod ignore_list_platform_requirement_filter_test;
+pub mod ignore_nothing_platform_requirement_filter_test;
+pub mod platform_requirement_filter_factory_test;

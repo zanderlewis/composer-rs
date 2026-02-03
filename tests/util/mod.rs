@@ -1,0 +1,29 @@
+//! Auto-generated module declarations
+
+pub mod auth_helper_test;
+pub mod bitbucket_test;
+pub mod config_validator_test;
+pub mod error_handler_test;
+pub mod filesystem_test;
+pub mod forgejo_test;
+pub mod forgejo_url_test;
+pub mod git_hub_test;
+pub mod git_lab_test;
+pub mod git_test;
+pub mod http;
+pub mod http_downloader_test;
+pub mod ini_helper_test;
+pub mod metadata_minifier_test;
+pub mod no_proxy_pattern_test;
+pub mod package_sorter_test;
+pub mod perforce_test;
+pub mod platform_test;
+pub mod process_executor_test;
+pub mod remote_filesystem_test;
+pub mod silencer_test;
+pub mod stream_context_factory_test;
+pub mod svn_test;
+pub mod tar_test;
+pub mod tls_helper_test;
+pub mod url_test;
+pub mod zip_test;

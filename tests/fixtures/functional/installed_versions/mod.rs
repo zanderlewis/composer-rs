@@ -1,0 +1,5 @@
+//! Auto-generated module declarations
+
+pub mod hooks;
+pub mod plugin_a;
+pub mod plugin_b;

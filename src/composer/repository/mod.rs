@@ -1,0 +1,33 @@
+//! Auto-generated module declarations
+
+pub mod advisory_provider_interface;
+pub mod array_repository;
+pub mod artifact_repository;
+pub mod canonical_packages_trait;
+pub mod composer_repository;
+pub mod composite_repository;
+pub mod configurable_repository_interface;
+pub mod filesystem_repository;
+pub mod filter_repository;
+pub mod installed_array_repository;
+pub mod installed_filesystem_repository;
+pub mod installed_repository;
+pub mod installed_repository_interface;
+pub mod invalid_repository_exception;
+pub mod lock_array_repository;
+pub mod package_repository;
+pub mod path_repository;
+pub mod pear_repository;
+pub mod platform_repository;
+pub mod repository_factory;
+pub mod repository_interface;
+pub mod repository_manager;
+pub mod repository_security_exception;
+pub mod repository_set;
+pub mod repository_utils;
+pub mod root_package_repository;
+pub mod vcs;
+pub mod vcs_repository;
+pub mod version_cache_interface;
+pub mod writable_array_repository;
+pub mod writable_repository_interface;

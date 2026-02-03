@@ -1,0 +1,30 @@
+//! Auto-generated module declarations
+
+pub mod advisory;
+pub mod autoload;
+pub mod cache;
+pub mod command;
+pub mod compiler;
+pub mod composer;
+pub mod config;
+pub mod console;
+pub mod dependency_resolver;
+pub mod downloader;
+pub mod event_dispatcher;
+pub mod exception;
+pub mod factory;
+pub mod filter;
+pub mod i_o;
+pub mod installed_versions;
+pub mod installer;
+pub mod json;
+pub mod p_h_p_stan;
+pub mod package;
+pub mod partial_composer;
+pub mod platform;
+pub mod plugin;
+pub mod question;
+pub mod repository;
+pub mod script;
+pub mod self_update;
+pub mod util;

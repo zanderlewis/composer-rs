@@ -1,0 +1,31 @@
+//! Auto-generated module declarations
+
+pub mod about_command_test;
+pub mod archive_command_test;
+pub mod audit_command_test;
+pub mod base_dependency_command_test;
+pub mod bump_command_test;
+pub mod check_platform_reqs_command_test;
+pub mod clear_cache_command_test;
+pub mod config_command_test;
+pub mod diagnose_command_test;
+pub mod dump_autoload_command_test;
+pub mod exec_command_test;
+pub mod fund_command_test;
+pub mod global_command_test;
+pub mod home_command_test;
+pub mod init_command_test;
+pub mod install_command_test;
+pub mod licenses_command_test;
+pub mod reinstall_command_test;
+pub mod remove_command_test;
+pub mod repository_command_test;
+pub mod require_command_test;
+pub mod run_script_command_test;
+pub mod search_command_test;
+pub mod self_update_command_test;
+pub mod show_command_test;
+pub mod status_command_test;
+pub mod suggests_command_test;
+pub mod update_command_test;
+pub mod validate_command_test;
