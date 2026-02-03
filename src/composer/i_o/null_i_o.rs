@@ -1,69 +1,114 @@
-// Namespace: Composer\IO
+//! Null IO implementation - discards all output
 
+use super::i_o_interface::{Authentication, IOInterface, Verbosity};
+use crate::composer::config::Config;
+use std::collections::HashMap;
+
+/// Null IO that discards all output and returns defaults for input
+/// Useful for non-interactive/silent operations
 #[derive(Debug, Clone, Default)]
 pub struct NullIO {
+    authentications: HashMap<String, Authentication>,
 }
 
 impl NullIO {
     pub fn new() -> Self {
         Self::default()
     }
+}
 
-    pub fn isInteractive(&self) -> bool {
-        todo!()
+impl IOInterface for NullIO {
+    fn is_interactive(&self) -> bool {
+        false
     }
 
-    pub fn isVerbose(&self) -> bool {
-        todo!()
+    fn is_verbose(&self) -> bool {
+        false
     }
 
-    pub fn isVeryVerbose(&self) -> bool {
-        todo!()
+    fn is_very_verbose(&self) -> bool {
+        false
     }
 
-    pub fn isDebug(&self) -> bool {
-        todo!()
+    fn is_debug(&self) -> bool {
+        false
     }
 
-    pub fn isDecorated(&self) -> bool {
-        todo!()
+    fn is_decorated(&self) -> bool {
+        false
     }
 
-    pub fn write(&self, messages: serde_json::Value, newline: bool, verbosity: i64) {
-        todo!()
+    fn write(&self, _messages: &[&str], _newline: bool, _verbosity: Verbosity) {
+        // Discard output
     }
 
-    pub fn writeError(&self, messages: serde_json::Value, newline: bool, verbosity: i64) {
-        todo!()
+    fn write_error(&self, _messages: &[&str], _newline: bool, _verbosity: Verbosity) {
+        // Discard output
     }
 
-    pub fn overwrite(&self, messages: serde_json::Value, newline: bool, size: Option<i64>, verbosity: i64) {
-        todo!()
+    fn write_raw(&self, _messages: &[&str], _newline: bool, _verbosity: Verbosity) {
+        // Discard output
     }
 
-    pub fn overwriteError(&self, messages: serde_json::Value, newline: bool, size: Option<i64>, verbosity: i64) {
-        todo!()
+    fn write_error_raw(&self, _messages: &[&str], _newline: bool, _verbosity: Verbosity) {
+        // Discard output
     }
 
-    pub fn ask(&self, question: serde_json::Value, r#default: serde_json::Value) {
-        todo!()
+    fn overwrite(&self, _messages: &[&str], _newline: bool, _size: Option<usize>, _verbosity: Verbosity) {
+        // Discard output
     }
 
-    pub fn askConfirmation(&self, question: serde_json::Value, r#default: serde_json::Value) -> bool {
-        todo!()
+    fn overwrite_error(&self, _messages: &[&str], _newline: bool, _size: Option<usize>, _verbosity: Verbosity) {
+        // Discard output
     }
 
-    pub fn askAndValidate(&self, question: serde_json::Value, validator: serde_json::Value, attempts: serde_json::Value, r#default: serde_json::Value) {
-        todo!()
+    fn ask(&self, _question: &str, default: Option<&str>) -> Option<String> {
+        default.map(String::from)
     }
 
-    pub fn askAndHideAnswer(&self, question: serde_json::Value) -> Option<String> {
-        todo!()
+    fn ask_confirmation(&self, _question: &str, default: bool) -> bool {
+        default
     }
 
-    pub fn select(&self, question: serde_json::Value, choices: serde_json::Value, r#default: serde_json::Value, attempts: serde_json::Value, errorMessage: serde_json::Value, multiselect: serde_json::Value) {
-        todo!()
+    fn ask_and_validate<F>(&self, _question: &str, _validator: F, _attempts: Option<u32>, default: Option<&str>) -> Option<String>
+    where
+        F: Fn(&str) -> Result<String, String>,
+    {
+        default.map(String::from)
     }
 
+    fn ask_and_hide_answer(&self, _question: &str) -> Option<String> {
+        None
+    }
+
+    fn select(&self, _question: &str, _choices: &[&str], default: Option<usize>, _attempts: Option<u32>, _error_message: &str, _multiselect: bool) -> Vec<usize> {
+        default.map(|d| vec![d]).unwrap_or_default()
+    }
+
+    fn get_authentications(&self) -> HashMap<String, Authentication> {
+        self.authentications.clone()
+    }
+
+    fn has_authentication(&self, repository_name: &str) -> bool {
+        self.authentications.contains_key(repository_name)
+    }
+
+    fn get_authentication(&self, repository_name: &str) -> Option<Authentication> {
+        self.authentications.get(repository_name).cloned()
+    }
+
+    fn set_authentication(&mut self, repository_name: &str, username: &str, password: Option<&str>) {
+        self.authentications.insert(
+            repository_name.to_string(),
+            Authentication {
+                username: username.to_string(),
+                password: password.map(String::from),
+            },
+        );
+    }
+
+    fn load_configuration(&mut self, _config: &Config) {
+        // Nothing to load for NullIO
+    }
 }
 
